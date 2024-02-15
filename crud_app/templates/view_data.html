@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <style>
+        table ,th ,td ,tr{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td ,th{
+            padding: 5px 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+   <table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>salary</th>
+    </tr>
+
+    {% for emp in employee_info %}
+   <tr>
+    <td>{{emp.emp_id}}</td>
+    <td>{{emp.emp_name}} </td>
+    <td>{{emp.emp_age}}</td>
+    <td>{{emp.emp_email}} </td>
+    <td>{{emp.emp_gender}}</td>
+    <td>{{emp.emp_salary}}</td>
+    <td><a style="margin: 3px 10px;" href="/update/{{emp.emp_id}}" class="btn btn-primary"> update </a><a href="/delete/{{emp.emp_id}}" class="btn btn-danger"> delete </a>  </td>
+   </tr>
+    {% endfor %}
+   </table>
+   <p style="margin-top: 35px;">
+            
+    <a href="/">go to add the new employee  ....</a>
+  </p>
+    </div>
+    
+</body>
+</html>
